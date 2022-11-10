@@ -57,142 +57,144 @@ declare function try_sha3_384(input: BinaryValue): ResultValue;
 @external("crypto", "sha3_512")
 declare function try_sha3_512(input: BinaryValue): ResultValue;
 
-export function tryRipemd128(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+export namespace Crypto {
+    function tryRipemd128(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_ripemd128(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_ripemd128(binary)
+        );
+    }
 
-export function tryRipemd160(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function tryRipemd160(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_ripemd160(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_ripemd160(binary)
+        );
+    }
 
-export function tryRipemd256(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function tryRipemd256(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_ripemd256(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_ripemd256(binary)
+        );
+    }
 
-export function tryRipemd320(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function tryRipemd320(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_ripemd320(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_ripemd320(binary)
+        );
+    }
 
-export function trySha2_224(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha2_224(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha2_224(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha2_224(binary)
+        );
+    }
 
-export function trySha2_256(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha2_256(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha2_256(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha2_256(binary)
+        );
+    }
 
-export function trySha2_384(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha2_384(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha2_384(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha2_384(binary)
+        );
+    }
 
-export function trySha2_512(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha2_512(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha2_512(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha2_512(binary)
+        );
+    }
 
-export function trySha_512_224(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha_512_224(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha_512_224(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha_512_224(binary)
+        );
+    }
 
-export function trySha_512_256(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha_512_256(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha_512_256(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha_512_256(binary)
+        );
+    }
 
-export function trySha3_224(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha3_224(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha3_224(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha3_224(binary)
+        );
+    }
 
-export function trySha3_256(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha3_256(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha3_256(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha3_256(binary)
+        );
+    }
 
-export function trySha3_384(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha3_384(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha3_384(binary)
-    );
-}
+        return decodeResultValueToBinary(
+            try_sha3_384(binary)
+        );
+    }
 
-export function trySha3_512(input: Array<u8>): Result<Array<u8>> {
-    const binary = new BinaryValue(false);
+    function trySha3_512(input: Array<u8>): Result<Array<u8>> {
+        const binary = new BinaryValue(false);
 
-    binary.value = input;
+        binary.value = input;
 
-    return decodeResultValueToBinary(
-        try_sha3_512(binary)
-    );
+        return decodeResultValueToBinary(
+            try_sha3_512(binary)
+        );
+    }
 }

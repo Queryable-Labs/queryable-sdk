@@ -11,60 +11,62 @@ import {
 @external("log", "log")
 declare function try_log(level: UInt8Value, message: StringValue, extra: Value): void;
 
-export function log(level: LogLevel, message: string, context: StructValue | null): void {
-    let value: Value;
+export namespace Log {
+    function log(level: LogLevel, message: string, context: StructValue | null): void {
+        let value: Value;
 
-    if (context == null) {
-        value = new NullValue();
-    } else {
-        value = context;
+        if (context == null) {
+            value = new NullValue();
+        } else {
+            value = context;
+        }
+
+        const levelValue = new UInt8Value(false);
+        levelValue.value = level as u8;
+
+        const messageValue = new StringValue(false);
+        messageValue.value = message;
+
+        try_log(levelValue, messageValue, value);
     }
 
-    const levelValue = new UInt8Value(false);
-    levelValue.value = level as u8;
+    function error(message: string): void {
+        log(LogLevel.Error, message, null);
+    }
 
-    const messageValue = new StringValue(false);
-    messageValue.value = message;
+    function errorWithContext(message: string, context: StructValue): void {
+        log(LogLevel.Error, message, context);
+    }
 
-    try_log(levelValue, messageValue, value);
-}
+    function warn(message: string): void {
+        log(LogLevel.Warn, message, null);
+    }
 
-export function error(message: string): void {
-    log(LogLevel.Error, message, null);
-}
+    function warnWithContext(message: string, context: StructValue): void {
+        log(LogLevel.Warn, message, context);
+    }
 
-export function errorWithContext(message: string, context: StructValue): void {
-    log(LogLevel.Error, message, context);
-}
+    function info(message: string): void {
+        log(LogLevel.Info, message, null);
+    }
 
-export function warn(message: string): void {
-    log(LogLevel.Warn, message, null);
-}
+    function infoWithContext(message: string, context: StructValue): void {
+        log(LogLevel.Info, message, context);
+    }
 
-export function warnWithContext(message: string, context: StructValue): void {
-    log(LogLevel.Warn, message, context);
-}
+    function debug(message: string): void {
+        log(LogLevel.Debug, message, null);
+    }
 
-export function info(message: string): void {
-    log(LogLevel.Info, message, null);
-}
+    function debugWithContext(message: string, context: StructValue): void {
+        log(LogLevel.Debug, message, context);
+    }
 
-export function infoWithContext(message: string, context: StructValue): void {
-    log(LogLevel.Info, message, context);
-}
+    function trace(message: string): void {
+        log(LogLevel.Trace, message, null);
+    }
 
-export function debug(message: string): void {
-    log(LogLevel.Debug, message, null);
-}
-
-export function debugWithContext(message: string, context: StructValue): void {
-    log(LogLevel.Debug, message, context);
-}
-
-export function trace(message: string): void {
-    log(LogLevel.Trace, message, null);
-}
-
-export function traceWithContext(message: string, context: StructValue): void {
-    log(LogLevel.Trace, message, context);
+    function traceWithContext(message: string, context: StructValue): void {
+        log(LogLevel.Trace, message, context);
+    }
 }

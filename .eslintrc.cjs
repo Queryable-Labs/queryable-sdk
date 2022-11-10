@@ -10,6 +10,7 @@ module.exports = {
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-namespace": "off",
         "indent": ["error", 4],
+        "no-inner-declarations": "off",
         semi: ["error", "always"],
     }
 };
